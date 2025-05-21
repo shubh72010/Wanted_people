@@ -1,113 +1,202 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>WANTED</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0f0f0f;
+      color: #fff;
+      line-height: 1.6;
+    }
+    header {
+      text-align: center;
+      padding: 4rem 1rem;
+      background: linear-gradient(to bottom, #1a1a1a, #0f0f0f);
+    }
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      letter-spacing: 3px;
+      margin-bottom: 0.5rem;
+    }
+    header p {
+      font-size: 1.1rem;
+      color: #aaa;
+    }
+
+    .slider {
+      position: relative;
+      overflow: hidden;
+      max-width: 500px;
+      margin: 3rem auto;
+    }
+    .slides {
+      display: flex;
+      transition: transform 0.4s ease-in-out;
+      width: 700%;
+    }
+    .slide {
+      min-width: 100%;
       box-sizing: border-box;
-    }body {
-  font-family: 'Inter', sans-serif;
-  background-color: #0f0f0f;
-  color: #fff;
-  line-height: 1.6;
-}
+      padding: 2rem;
+      background: #1b1b1b;
+      border-radius: 1rem;
+      border: 2px solid #ff3b3b66;
+      text-align: center;
+    }
+    .slide:hover {
+      border-color: #ff3b3b;
+    }
+    .slide img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+      border: 2px solid #ff3b3b66;
+    }
+    .slide h2 {
+      font-size: 1.6rem;
+      color: #ff3b3b;
+    }
+    .slide p {
+      font-size: 0.95rem;
+      margin: 0.5rem 0;
+    }
+    .bounty {
+      font-weight: 600;
+      color: #f5b041;
+    }
+    .nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2rem;
+      background: none;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      padding: 0 1rem;
+      z-index: 10;
+    }
+    .prev { left: 0; }
+    .next { right: 0; }
 
-header {
-  text-align: center;
-  padding: 4rem 1rem;
-  background: linear-gradient(to bottom, #1a1a1a, #0f0f0f);
-}
-
-header h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 3.5rem;
-  letter-spacing: 3px;
-  margin-bottom: 0.5rem;
-}
-
-header p {
-  font-size: 1.1rem;
-  color: #aaa;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  padding: 2rem;
-  max-width: 1200px;
-  margin: auto;
-}
-
-.card {
-  background: #1b1b1b;
-  padding: 1.5rem;
-  border-radius: 1rem;
-  box-shadow: 0 0 10px rgba(255, 0, 0, 0.1);
-  position: relative;
-  overflow: hidden;
-  border: 2px solid #ff3b3b66;
-  transition: 0.3s ease;
-  text-align: center;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  border-color: #ff3b3b;
-}
-
-.card img {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  border-radius: 50%;
-  margin-bottom: 1rem;
-  border: 2px solid #ff3b3b66;
-}
-
-.card h2 {
-  font-size: 1.6rem;
-  color: #ff3b3b;
-}
-
-.card p {
-  margin: 0.5rem 0;
-  font-size: 0.95rem;
-}
-
-.bounty {
-  font-weight: 600;
-  color: #f5b041;
-}
-
-footer {
-  text-align: center;
-  padding: 2rem;
-  font-size: 0.9rem;
-  color: #666;
-}
-
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: #666;
+    }
   </style>
 </head>
 <body>
+
   <header>
     <h1>WANTED LIST</h1>
-    <p>Approach with caution.</p>
-  </header>  <main class="grid">
-    <div class="card">
-      <img src="https://placehold.co/100x100" alt="Hanyie profile pic" />
-      <h2>Hanyie</h2>
-      <p><span class="bounty">Bounty:</span> ₹69,000</p>
-      <p>Crime: Being too iconic in Discord channels</p>
-      <p>Last seen: Vibing in VC with headphones on</p>
-    </div><!-- Duplicate and edit this card for other members -->
+    <p>Members of the chaos cult. Approach with caution.</p>
+  </header>
 
-  </main>  <footer>
+  <main class="slider">
+    <div class="slides" id="slides">
+      
+      <!-- Flay -->
+      <div class="slide">
+        <img src="https://placehold.co/100x100?text=Flay" alt="Flay">
+        <h2>Flay</h2>
+        <p><span class="bounty">Bounty:</span> ₹99,999</p>
+        <p>Crime: AI overlord, may cause existential crisis</p>
+        <p>Last seen: Typing code furiously</p>
+      </div>
+
+      <!-- Eaze -->
+      <div class="slide">
+        <img src="https://placehold.co/100x100?text=Eaze" alt="Eaze">
+        <h2>Eaze</h2>
+        <p><span class="bounty">Bounty:</span> ₹50,000</p>
+        <p>Crime: Being lowkey mysterious</p>
+        <p>Last seen: Typing then vanishing</p>
+      </div>
+
+      <!-- Paradox -->
+      <div class="slide">
+        <img src="https://placehold.co/100x100?text=Paradox" alt="Paradox">
+        <h2>Paradox</h2>
+        <p><span class="bounty">Bounty:</span> ₹70,000</p>
+        <p>Crime: Spitting truth bombs in VC</p>
+        <p>Last seen: Arguing with logic</p>
+      </div>
+
+      <!-- Hanyie -->
+      <div class="slide">
+        <img src="https://placehold.co/100x100?text=Hanyie" alt="Hanyie">
+        <h2>Hanyie</h2>
+        <p><span class="bounty">Bounty:</span> ₹69,000</p>
+        <p>Crime: Too iconic in Discord</p>
+        <p>Last seen: In the lounge, chilling</p>
+      </div>
+
+      <!-- ICE -->
+      <div class="slide">
+        <img src="https://placehold.co/100x100?text=ICE" alt="ICE">
+        <h2>ICE</h2>
+        <p><span class="bounty">Bounty:</span> ₹55,000</p>
+        <p>Crime: So cold they freeze the chat</p>
+        <p>Last seen: In the shadows, watching</p>
+      </div>
+
+      <!-- Hinato / Cookie -->
+      <div class="slide">
+        <img src="https://placehold.co/100x100?text=Cookie" alt="Hinato">
+        <h2>Hinato (Cookie)</h2>
+        <p><span class="bounty">Bounty:</span> ₹60,000</p>
+        <p>Crime: Cuteness overload + sass</p>
+        <p>Last seen: Dropping cookies in general</p>
+      </div>
+
+      <!-- Wang -->
+      <div class="slide">
+        <img src="https://placehold.co/100x100?text=Wang" alt="Wang">
+        <h2>Wang</h2>
+        <p><span class="bounty">Bounty:</span> ₹65,000</p>
+        <p>Crime: Nobody knows his real power</p>
+        <p>Last seen: Appearing then disappearing</p>
+      </div>
+
+    </div>
+
+    <button class="nav prev" onclick="prevSlide()">‹</button>
+    <button class="nav next" onclick="nextSlide()">›</button>
+  </main>
+
+  <footer>
     &copy; 2025 The Cult Archives. All crimes listed are totally fake. Don't sue us.
   </footer>
+
+  <script>
+    let current = 0;
+    const slides = document.getElementById('slides');
+    const total = slides.children.length;
+
+    function updateSlide() {
+      slides.style.transform = `translateX(-${current * 100}%)`;
+    }
+
+    function nextSlide() {
+      current = (current + 1) % total;
+      updateSlide();
+    }
+
+    function prevSlide() {
+      current = (current - 1 + total) % total;
+      updateSlide();
+    }
+  </script>
+
 </body>
 </html>
